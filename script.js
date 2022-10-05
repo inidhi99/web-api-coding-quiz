@@ -33,8 +33,6 @@ var Questions = [
 var timeLeft = document.getElementById("timer");
 
 var secondsLeft = 60;
-var questionNumber = 0;
-var totalScore = 0;
 var questionCount = 1;
 
 
@@ -46,7 +44,7 @@ function countdown() {
     
             if (secondsLeft <= 0){
                 clearInterval(timerInterval);
-                finish.textContent = "Time is up!";
+                finish.textContent = "Game Over!";
                 gameOver();
 
             } else  if(questionCount >= questionSource.length +1) {
