@@ -36,20 +36,16 @@ var secondsLeft = 60;
 var questionCount = 1;
 
 
-function countdown() {
+function setTime() {
         
         var timerInterval = setInterval(function () {
           secondsLeft--;
-          timeLeft.textContent = "Time left: " + secondsLeft;
+          timeLeft.textContent = "Time: " + secondsLeft + "S";
     
-            if (secondsLeft <= 0){
+            if (secondsLeft <= 0 || questionCount >= questionSource.length +1){
                 clearInterval(timerInterval);
                 finish.textContent = "Game Over!";
                 gameOver();
-
-            } else  if(questionCount >= questionSource.length +1) {
-                clearInterval(timerInterval);
-                gameOver();
-                } 
+            }
     }, 1000);
 }
